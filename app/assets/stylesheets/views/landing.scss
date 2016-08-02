@@ -1,0 +1,105 @@
+@import "font-awesome";
+
+.background {
+  height: calc(100vh-52px);
+  background-image: asset-url("mountain.jpg");
+  height: 100vh;
+  width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-2 {
+  background-color: pink;
+  height: 50vh;
+  width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 50px auto;
+  justify-content: center;
+}
+
+.feature {
+  flex: 0 0 280px;
+  margin: 20px 10px;
+}
+
+.icon-settings {
+  color: pink;
+  font: 50;
+}
+
+.image-box{
+  width:100%;
+}
+
+.image {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-setting{
+  flex: 0 0 25%;
+  position: relative;
+
+ &:hover {
+ .yellow-layout {
+    opacity: 1;
+    transition: all 0.5s;
+    background-color: rgba(255,182,193,0.5);
+   }
+  }
+ }
+
+.yellow-layout {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(255,182,193,0.0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+  .layout-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media all and (max-width: 1199px) {
+      .features {
+        max-width: 600px;
+      }
+      .image-setting {
+        flex: 0 0 50%;
+      }
+    }
+
+  @media all and (max-width: 600px) {
+     .image-setting {
+       flex: 0 0 100%;
+     }
+   }
+
+  .short-underline {
+     width: 50px;
+     border-bottom: 2px solid pink;
+   }
