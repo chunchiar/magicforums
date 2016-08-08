@@ -1,0 +1,25 @@
+.short-underline {
+   width: 50px;
+   border-bottom: 2px solid pink;
+ }
+
+
+.about-title {
+  height: calc(100vh-52px);
+  background-image: asset-url("city.jpg");
+  height: 100vh;
+  width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: right;
+  justify-content: center;
+}
+
+.social {
+  justify-content: center;
+  max-width: 1200px;
+  flex: 2 0;
+  align-items: flex-start;
+}

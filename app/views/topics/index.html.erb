@@ -1,0 +1,13 @@
+<div class="topics-parent text-center">
+  <% @topics.each do |topic| %>
+  <div class="boxed-1">
+    <h3><%= link_to topic.title, topic_posts_path(topic) %></h3>
+    <h5><b><%= topic.description %></b></h5>
+    <%= link_to t('.Edit Topic'), edit_topic_path(topic), :class => 'btn btn-success btn-lg'%>
+  </div>
+  <% end %>
+</div>
+
+<div class="form-group text-center">
+  <%= link_to t('.New Topic'), new_topic_path, :class => 'btn btn-success btn-lg'%>
+</div>

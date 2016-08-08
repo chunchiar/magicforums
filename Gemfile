@@ -14,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
+gem 'mini_magick', '~> 3.5.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'font-awesome-rails'
 # Use jquery as the JavaScript library
@@ -26,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'net-ssh'
+gem 'carrierwave'
 gem 'bootstrap-sass'
 group :production do
 gem 'rails_12factor'
@@ -35,7 +38,7 @@ end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'pry'
 end
 
 group :development do

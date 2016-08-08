@@ -1,5 +1,5 @@
 @import "font-awesome";
-
+.landing {
 .background {
   height: calc(100vh-52px);
   background-image: asset-url("mountain.jpg");
@@ -14,7 +14,7 @@
 }
 
 .background-2 {
-  background-color: pink;
+  background-color: turquoise;
   height: 50vh;
   width: 100%;
   background-position: 50% 50%;
@@ -39,7 +39,7 @@
 }
 
 .icon-settings {
-  color: pink;
+  color: turquoise;
   font: 50;
 }
 
@@ -62,7 +62,7 @@
  .yellow-layout {
     opacity: 1;
     transition: all 0.5s;
-    background-color: rgba(255,182,193,0.5);
+    background-color: rgba(64,224,208,0.5);
    }
   }
  }
@@ -71,7 +71,7 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: rgba(255,182,193,0.0);
+  background-color: rgba(64,224,208,0.0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,5 +101,6 @@
 
   .short-underline {
      width: 50px;
-     border-bottom: 2px solid pink;
+     border-bottom: 2px solid turquoise;
    }
+}
