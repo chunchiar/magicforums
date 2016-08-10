@@ -1,6 +1,7 @@
 class Topic < ApplicationRecord
 
 has_many :posts
-belongs_to :topic, optional: true
+validates :title, length: { minimum: 5 }, presence: true
+validates :description, length: { minimum: 10 }, presence: true
 
 end
