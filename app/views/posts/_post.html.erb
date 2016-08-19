@@ -1,0 +1,18 @@
+<div class="centering">
+
+  <h3><%= link_to post.title, topic_post_comments_path(post.topic,post) %></h3>
+
+
+  <div id="post-image">
+    <%= image_tag post.image, class: "img-settings img-responsive center-block" %>
+  </div>
+
+
+  <h5><b><%= post.body %></b></h5>
+  <%= link_to edit_topic_post_path(post.topic,post) do %>
+  <%= fa_icon 'edit 2x', class: 'btn btn-success btn-lg' %>
+  <% end %>
+  <%= link_to topic_post_path(post.topic,post), method: :delete, data: { confirm: "Delete?" } do %>
+  <%= fa_icon 'trash 2x', class: 'btn btn-success btn-lg' %>
+  <% end %>
+</div>

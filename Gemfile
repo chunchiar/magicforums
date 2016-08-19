@@ -30,7 +30,14 @@ gem 'bcrypt', '~> 3.1.11'
 gem "bcrypt-ruby"
 gem 'carrierwave'
 gem 'bootstrap-sass'
+gem 'kaminari'
+gem "bootstrap-kaminari-views"
+gem 'responders', '~> 2.0'
+gem 'friendly_id', github: 'norman/friendly_id'
 gem 'pundit'
+gem 'sqlite3'
+gem 'redis'
+gem 'remotipart', github: 'mshibuya/remotipart', ref: '88d9a7d'
 group :production do
 gem 'rails_12factor'
 end

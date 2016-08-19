@@ -1,22 +1,25 @@
 class TopicPolicy < ApplicationPolicy
 
-def new?
-  user.present? && user.admin?
-end
+  attr_reader :user, :record
 
-def create?
-  new?
-end
+  def new?
+    user.present? && user.admin?
+  end
 
-def edit?
-  new?
-end
+  def create?
+    new?
+  end
 
-def update?
-  new?
-end
+  def edit?
+    new?
+  end
 
-def destroy?
-  new?
-end
+  def update?
+    new?
+  end
+
+  def destroy?
+    new?
+  end
+
 end

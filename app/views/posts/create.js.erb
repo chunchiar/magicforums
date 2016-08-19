@@ -1,0 +1,6 @@
+$('#flash-messages-container').html("<%=j render partial: 'partials/flash_messages' %>")
+
+<% if @post.persisted? %>
+$('#posts-form-container').html("<%=j render partial: 'create_post', locals: { post: @new_post, topic: @topic } %>")
+$('#posts').append("<%=j render partial: 'post', locals: { post: @post, topic: @topic } %>")
+<% end %>

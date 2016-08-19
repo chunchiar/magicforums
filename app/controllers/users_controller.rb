@@ -16,15 +16,17 @@ class UsersController < ApplicationController
   end
 
   def edit
-       @user = User.find_by(id: params[:id])
+       @user = User.friendly.find(params[:id])
   end
 
   def update
-    @user = User.find_by(id: params[:id])
+    @user = User.friendly.find(params[:id])
 
         if @user.update(user_params)
-          redirect_to user_path(@user)
+          flash[:success] = "You've updated the user."
+          redirect_to topics_path(@user)
         else
+          flash[:danger] = @user.errors.full_messages
           redirect_to edit_user_path(@user)
         end
   end

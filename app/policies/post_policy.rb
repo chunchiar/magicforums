@@ -1,11 +1,11 @@
 class PostPolicy < ApplicationPolicy
 
   def new?
-    user.present? && user.admin?
+    user.present?
   end
 
   def create?
-    new?
+    user_has_power?
   end
 
   def edit?
@@ -13,11 +13,11 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    new?
+    edit?
   end
 
   def destroy?
-    user.present? && record.user == user || user_has_power?
+    edit?
   end
 
   private

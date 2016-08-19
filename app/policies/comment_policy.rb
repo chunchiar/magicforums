@@ -2,8 +2,13 @@ class CommentPolicy < ApplicationPolicy
 
    attr_reader :user, :record
 
-   def new?
-     user.present? && user.admin?
+
+  def new?
+     user.present?
+  end
+
+   def create?
+     new?
    end
 
    def edit?
@@ -11,11 +16,11 @@ class CommentPolicy < ApplicationPolicy
    end
 
    def update?
-     new?
+     user.present? && record.user == user || user_has_power?
    end
 
    def destroy?
-     new?
+     user.present? && record.user == user || user_has_power?
    end
 
    private

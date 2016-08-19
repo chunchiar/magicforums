@@ -1,0 +1,43 @@
+<div class="centering" id="main-comment-<%= comment.id %>">
+
+ <div id="comment-formholder-<%= comment.id %>">
+  </div>
+
+  <div id="comment-<%= comment.id %>">
+   <div id="post-image">
+    <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
+   </div>
+
+   <h4><%= comment.body %></h4>
+
+   <div class="control-panel">
+     <% if current_user == comment.user %>
+       <%= link_to edit_topic_post_comment_path(post.topic,post,comment), remote:true do %>
+        <%= fa_icon 'edit 2x', class: 'btn btn-success btn-lg' %>
+       <% end %>
+      <% end %>
+
+     <% if comment.user == current_user || current_user&.admin? || current_user&.moderator? %>
+       <%= link_to topic_post_comment_path(post.topic,post,comment), method: :delete, data: { confirm: "Delete?" }, :remote=>true do %>
+        <%= fa_icon 'trash 2x', class: 'btn btn-success btn-lg' %>
+       <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="voting-panel">
+        <span>Score:</span>
+        <span class="voting-score"><%= comment.total_votes %></span>
+
+<% if current_user %>
+  <%= link_to upvote_path(comment_id: comment.id), method: :post, remote: true do %>
+   <%= fa_icon 'thumbs-o-up', class: 'btn btn-success btn-lg' %>
+  <% end %>
+
+  <%= link_to downvote_path(comment_id: comment.id), method: :post, remote: true do %>
+   <%= fa_icon 'thumbs-o-down', class: 'btn btn-success btn-lg' %>
+  <% end %>
+<% end %>
+
+</div>
