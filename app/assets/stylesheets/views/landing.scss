@@ -2,7 +2,7 @@
 .landing {
   .background {
     height: calc(100vh-52px);
-    background-image: asset-url("mountain.jpg");
+    background-image: asset-url("blue_bird.jpeg");
     height: 100vh;
     width: 100%;
     background-position: 50% 50%;
@@ -14,7 +14,8 @@
   }
 
   .background-2 {
-    background-color: #334FFF;
+    background-color: #000000;
+
     height: 50vh;
     width: 100%;
     background-position: 50% 50%;
@@ -23,6 +24,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    & body {
+      color: white;
+    }
   }
 
   .features {
@@ -39,7 +44,7 @@
   }
 
   .icon-settings {
-    color: #334FFF;
+    color: #000000;
     font: 50;
   }
 
@@ -62,7 +67,7 @@
       .yellow-layout {
         opacity: 1;
         transition: all 0.5s;
-        background-color: rgba(51,79,255,0.5);
+        background-color: rgba(0,0,0,0.5);
       }
     }
   }
@@ -71,7 +76,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: rgba(51,79,255,0.0);
+    background-color: rgba(0,0,0,0.0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,6 +106,6 @@
 
   .short-underline {
     width: 50px;
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid black;
   }
 }
