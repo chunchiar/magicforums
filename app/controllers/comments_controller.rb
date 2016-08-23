@@ -4,10 +4,11 @@ class CommentsController < ApplicationController
   before_action :authenticate!, only: [:index, :create, :edit, :update, :new, :destroy]
 
   def index
-    @post = Post.includes(:comments).find_by(slug: params[:post_id])
+    @post = Post.friendly.find(params[:post_id])
     @topic = @post.topic
     @comments = @post.comments.page(params[:page]).per(4)
     @comment = Comment.new
+    authorize @comment
   end
 
   def create

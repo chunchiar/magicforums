@@ -1,7 +1,7 @@
 class PostPolicy < ApplicationPolicy
 
   def new?
-    user.present?
+    user_has_power? 
   end
 
   def create?

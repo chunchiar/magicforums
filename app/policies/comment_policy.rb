@@ -2,6 +2,9 @@ class CommentPolicy < ApplicationPolicy
 
    attr_reader :user, :record
 
+  def index?
+    user.present?
+  end
 
   def new?
      user.present?

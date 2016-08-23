@@ -49,6 +49,7 @@ class TopicsController < ApplicationController
     @topic = Topic.friendly.find(params[:id])
     authorize @topic
     if @topic.destroy
+      flash[:success] = "Topic deleted"
       redirect_to topics_path
     else
       redirect_to topic_path(@topic)

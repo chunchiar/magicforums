@@ -11,16 +11,19 @@ class UsersController < ApplicationController
           flash[:success] = "You've created a new user."
           redirect_to root_path
         else
+          flash[:danger] = @user.errors.full_messages
           redirect_to new_user_path
         end
   end
 
   def edit
        @user = User.friendly.find(params[:id])
+       authorize @user
   end
 
   def update
     @user = User.friendly.find(params[:id])
+    authorize @user
 
         if @user.update(user_params)
           flash[:success] = "You've updated the user."

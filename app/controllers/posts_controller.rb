@@ -10,6 +10,7 @@ before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
 
   def new
     @post = Post.new
+
     @topic = Topic.find_by(slug: params[:topic_id])
     @new_post = Post.new
     authorize @post
@@ -22,7 +23,7 @@ before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
 
     if @post.save
       flash.now[:success] = "You've created a new post."
-      #redirect_to topic_posts_path(@topic)
+      redirect_to topic_posts_path(@topic)
     else
       flash.now[:danger] = @post.errors.full_messages
     end
@@ -37,6 +38,7 @@ before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
   def update
     @post = Post.find_by(slug: params[:id])
     @topic = Topic.find_by(slug: params[:topic_id])
+    authorize @post
 
     if @post.update(post_params)
       flash[:success] = "You've updated a new post."
