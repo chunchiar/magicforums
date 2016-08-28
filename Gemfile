@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.11'
 gem "bcrypt-ruby"
 gem 'carrierwave'
+gem 'figaro'
 gem 'bootstrap-sass'
 gem 'kaminari'
 gem "bootstrap-kaminari-views"

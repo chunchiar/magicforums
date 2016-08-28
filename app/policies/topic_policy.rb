@@ -2,6 +2,7 @@ class TopicPolicy < ApplicationPolicy
 
   attr_reader :user, :record
 
+
   def new?
     user.present? && user.admin?
   end

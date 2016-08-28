@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
 
-  before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy]
+  before_action :authenticate!, only: [:create, :edit, :update, :new, :destroy, :index]
 
   def index
     @topics = Topic.page(params[:page]).per(6)

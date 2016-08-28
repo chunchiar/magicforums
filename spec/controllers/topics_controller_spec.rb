@@ -2,9 +2,9 @@ require 'rails_helper'
 
   RSpec.describe TopicsController, type: :controller do
     before(:all) do
-      @admin = User.create(username: "myadmin", email: "myadmin@gmail.com", password: "myadmin", role:"admin")
-      @user = User.create(username:"user6@gmail.com", email: "user6@gmail.com", password: "password")
-      @topic = Topic.create ({ title:"Topic 1", description: "Hello there", user_id: @admin.id })
+      @admin = create(:user,:admin)
+      @user = create(:user)
+      @topic = create (:topic)
     end
 
     describe "index topics" do
@@ -82,7 +82,6 @@ require 'rails_helper'
       get :edit, params: { id: @topic.id }
 
       expect(assigns[:topic]).to be_present
-      binding.pry
       expect(subject).to render_template(:edit)
     end
 

@@ -2,8 +2,8 @@ require 'rails_helper'
 
   RSpec.describe UsersController, type: :controller do
     before(:all) do
-      @user = User.create(username: "main", email: "main@gmail.com", password: "main")
-      @unauthorized_user = User.create(username: "test", email: "test@gmail.com", password: "test")
+      @user = create(:user)
+      @unauthorized_user = create(:unknown_user)
     end
 
     describe "render new" do
@@ -17,14 +17,14 @@ require 'rails_helper'
     describe "create user" do
       it "should create new user" do
 
-        params = { user: { email: "user@gmail.com", username: "thor", password: "password" } }
+        params = { user: { email: "newuser@gmail.com", username: "newuser", password: "password" } }
         post :create, params: params
 
-        user = User.find_by(email: "user@gmail.com")
+        user = User.find_by(email: "newuser@gmail.com")
 
         expect(User.count).to eql(3)
-        expect(user.email).to eql("user@gmail.com")
-        expect(user.username).to eql("thor")
+        expect(user.email).to eql("newuser@gmail.com")
+        expect(user.username).to eql("newuser")
         expect(flash[:success]).to eql("You've created a new user.")
       end
     end

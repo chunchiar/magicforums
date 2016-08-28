@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
     CommentBroadcastJob.perform_later("create", @comment)
     flash.now[:success] = "You've created a new comment."
     # binding.pry
-    #   redirect_to topic_post_comments_path(@topic, @post)
+    # redirect_to topic_post_comments_path(@topic, @post)
   else
     flash.now[:danger] = @comment.errors.full_messages
   end

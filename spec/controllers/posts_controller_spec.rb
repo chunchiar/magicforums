@@ -2,10 +2,10 @@ require 'rails_helper'
 
   RSpec.describe PostsController, type: :controller do
     before(:all) do
-      @admin = User.create(username: "myadmin", email: "myadmin@gmail.com", password: "myadmin", role:"admin")
-      @user = User.create(username:"user6@gmail.com", email: "user6@gmail.com", password: "password")
-      @topic = Topic.create ({ title:"Topic 1", description: "Hello there", user_id: @admin.id })
-      @post = Post.create({ title: "Post 1", body: "Hello there", topic_id: @topic.id, user_id: @admin.id })
+      @admin = create(:user,:admin)
+      @user = create(:user)
+      @topic = create (:topic)
+      @post = create(:post, user_id: @admin.id, topic_id: @topic.id)
     end
 
     describe "index posts" do

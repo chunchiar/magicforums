@@ -24,6 +24,7 @@ RSpec.describe PasswordResetsController, type: :controller do
       expect(@user.password_reset_token).to be_present
       expect(@user.password_reset_at).to be_present
       expect(subject).to redirect_to(new_password_reset_path)
+      expect(ActionMailer::Base.deliveries.count).to eql(1)
     end
 
     it "should error if no user" do

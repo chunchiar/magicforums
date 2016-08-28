@@ -8,6 +8,6 @@ votesChannelFunctions = () ->
     disconnected: () ->
     received: (data) ->
       console.log(data)
-      $("#main-comment-#{data.comment_id} .voting-score").html(data.value)
+      $("#comment-#{data.comment_id} .voting-score").html(data.value)
 
 $(document).on 'turbolinks:load', votesChannelFunctions

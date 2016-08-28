@@ -1,15 +1,18 @@
 class SessionsController < ApplicationController
 
+  before_action :authenticate!, only: [:destroy]
+
   def new
     @user = User.new
   end
 
   def create
     user = User.find_by(email: user_params[:email])
+
     if user && user.authenticate(user_params[:password])
       session[:id] = user.id
       flash[:success] = "Welcome back #{current_user.username}"
-      redirect_to topics_path
+      redirect_to root_path
     else
       flash[:danger] = "Error logging in"
       render :new

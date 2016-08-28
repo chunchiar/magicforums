@@ -8,8 +8,7 @@
   <%= paginate @comments %>
 </div>
 
-<div class="align">
-  <div class="button text-center", id="comments-form-container">
-    <%= render partial: "create_form", locals: { comment: @comment, post: @post, topic: @topic } %>
-  </div>
+
+<div class="button text-center", id="comments-form-container">
+  <%= render partial: "create_form", locals: { comment: @comment, post: @post, topic: @topic } %>
 </div>
