@@ -1,13 +1,32 @@
-#header {
-  height: 52px;
-  z-index: 1;
-}
+// #header {
+//   height: 52px;
+//   z-index: 1;
+// }
 
 .navbar {
   margin-bottom: 0;
-  background-color: black;
-  background-image: none;
-  background-repeat: no-repeat;
+  background:rgba(255,255,255,0.6);
+  transition:background 1.5s ease;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:999;
   font-family: Verdana;
-  color: black;
+}
+
+#sp-header{
+    background:rgba(255,255,255,0.6);
+    transition:background 1.5s ease;
+}
+#sp-header.header-sticky{
+    background:#fff;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:999;
+}
+#sp-slider{
+    margin-top:-50px;
 }

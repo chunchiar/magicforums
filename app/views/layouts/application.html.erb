@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Magicforums</title>
+  <title>HealthCare Hangout</title>
   <% if current_user %>
    <meta user="<%=current_user.username%>">
   <% if current_user.admin? || current_user.moderator? %>
@@ -14,15 +14,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-  <div id="header">
+  <div id="sp-header">
     <%= render partial: 'partials/header' %>
   </div>
+
+  <%= yield %>
+
   <div id="flash-messages-container">
     <%= render partial: "partials/flash_messages" %>
   </div>
-  <%= yield %>
+
+    <%= render partial: 'partials/footer' %>
 </body>
 </html>

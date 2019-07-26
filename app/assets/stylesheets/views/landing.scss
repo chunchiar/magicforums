@@ -1,8 +1,18 @@
 @import "font-awesome";
+
+// @font-face {
+//    font-family: 'Nunito Bold.ttf';
+//    src: url('/assets/Nunito Bold.ttf');
+//    font-family: 'Nunito Light.ttf';
+//    src: url('/assets/Nunito Light.ttf');
+//    font-family: 'Nunito Regular.ttf';
+//    src: url('/assets/Nunito Regular.ttf');
+// }
+
 .landing {
   .background {
     height: calc(100vh-52px);
-    background-image: asset-url("blue_bird.jpeg");
+    background-image: asset-url("studio.jpg");
     height: 100vh;
     width: 100%;
     background-position: 50% 50%;
@@ -11,24 +21,48 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.85;
   }
 
-  .background-2 {
-    background-color: #000000;
-
-    height: 50vh;
-    width: 100%;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    & body {
-      color: white;
-    }
+  .welcome-content {
+    max-width: 800px;
+    margin-left: 600px;
+    margin-top: 50px;
   }
+
+  .strong {
+    font-weight: 700;
+  }
+
+  .what-content {
+    background-color: #fff;
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+    max-width: 970px;
+
+  }
+
+  // .background-2 {
+  //   background-color: #000000;
+  //
+  //   height: 50vh;
+  //   width: 100%;
+  //   background-position: 50% 50%;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //
+  //   & body {
+  //     color: white;
+  //   }
+  // }
 
   .features {
     display: flex;
@@ -46,6 +80,11 @@
   .icon-settings {
     color: #000000;
     font: 50;
+  }
+
+  .image-container {
+    margin-top: 50px;
+    margin-bottom: 30px; 
   }
 
   .image-box{
@@ -107,5 +146,35 @@
   .short-underline {
     width: 50px;
     border-bottom: 2px solid black;
+  }
+
+  // .white {
+  //   color: #fff;
+  //   transition: all 0.2s;
+  // }
+
+  .font {
+      font-size: 28px;
+      line-height: 58px;
+      color: black;
+      font-family: 'Nunito';
+  }
+
+  .font18 {
+      font-size: 18px;
+      line-height: 58px;
+      color: black;
+      font-family: 'Nunito';
+  }
+
+  .font38 {
+    font-size: 48px;
+    line-height: 58px;
+    color: white;
+    font-family: 'Nunito';
+  }
+
+  .top340 {
+    margin-top: 140px;
   }
 }
